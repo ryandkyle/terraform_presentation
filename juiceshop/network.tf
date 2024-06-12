@@ -9,11 +9,13 @@ resource "azurerm_virtual_network" "vnet" {
 }
 
 // Firewall subnet
-resource "azurerm_subnet" "gateway" {
-  name                 = "${var.prefix}-gateway-subnet"
+module "gateway_subnet" {
+  source = "../modules/subnet"
+
   resource_group_name  = azurerm_resource_group.rg.name
+  prefix               = var.prefix
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.1.4.0/24"]
+  subnet_postfix       = "gateway"
 }
 
 // frontend subnet
