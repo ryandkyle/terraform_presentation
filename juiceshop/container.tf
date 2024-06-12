@@ -12,8 +12,8 @@ resource "azurerm_container_group" "container" {
     container {
         name   = "${var.prefix}-container"
         image  = "bkimminich/juice-shop"
-        cpu    = "0.5"
-        memory = "1"
+        cpu    = "1"
+        memory = "2"
 
         ports {
             port     = 443
