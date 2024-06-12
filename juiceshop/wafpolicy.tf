@@ -17,7 +17,7 @@ resource "azurerm_web_application_firewall_policy" "wafpolicy" {
 
       operator           = "IPMatch"
       negation_condition = false
-      match_values       = ["191.96.37.210"] // Seattle IP
+      match_values       = ["191.96.37.187"] // Seattle IP
     }
 
     action = "Allow"
