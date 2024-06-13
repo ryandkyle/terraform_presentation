@@ -21,3 +21,10 @@ Reference: https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-4?t
 ### Reset SP password
 `az ad sp credential reset --id <spn-id>`
 Reference: https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-7?tabs=bash#reset-credentials-returning-output-to-the-console-and-log-file
+
+# PowerShell
+
+### Register 
+
+`Register-AzureRmResourceProvider -ProviderNamespace Microsoft.App`
+Reference: 

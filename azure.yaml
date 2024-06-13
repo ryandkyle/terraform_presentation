@@ -1,0 +1,5 @@
+name: juiceshop-terraform
+metadata:
+  template: juiceshop-terraform@0.0.1-beta
+infra:
+  provider: terraform

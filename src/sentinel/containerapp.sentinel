@@ -1,0 +1,23 @@
+# This policy uses the Sentinel tfplan/v2 import to require that
+# all Azure Container App have CPU sizes from an allowed list
+
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+
+# Allowed container app CPU sizes
+allowed_sizes = ["0.5", "1", "2"]
+
+allContainerApps = plan.find_resources("azurerm_container_app.template.container")
+
+# Filter to Azure Container Apps with violations that use azurerm_container_app
+# Warnings will be printed for all violations since the last parameter is true
+violatingContainerApps = plan.filter_attribute_not_in_list(allAzureContainerApps,
+                    "cpu", allowed_sizes, true)
+
+# Main rule
+violations = length(violatingContainerApps["messages"])
+
+main = rule {
+  violations is 0
+}
