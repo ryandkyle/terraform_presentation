@@ -25,6 +25,5 @@ Reference: https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-7?t
 # PowerShell
 
 ### Register 
-
 `Register-AzureRmResourceProvider -ProviderNamespace Microsoft.App`
-Reference: 
+
