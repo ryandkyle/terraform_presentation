@@ -6,7 +6,7 @@
 import "tfplan-functions" as plan
 
 # Allowed container app CPU sizes
-allowed_sizes = ["0.5", "1", "2"]
+allowed_sizes = [0.5, 1, 2]
 
 allContainerApps = plan.find_resources("azurerm_container_app.template.container")
 
